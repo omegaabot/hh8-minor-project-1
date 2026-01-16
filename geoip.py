@@ -1,8 +1,3 @@
-"""
-geoip.py
-Purpose: Perform GeoIP lookup for extracted IP addresses
-"""
-
 import requests
 
 
