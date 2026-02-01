@@ -31,33 +31,18 @@ Key Features:
 3. Perform GeoIP lookups – does the sender look legitimate? 🤔  
 4. Validate SPF and DKIM statuses to ensure authenticity and security.  
 
-Results are displayed in a user-friendly web interface, complete with maps, reputation data, and analysis logs. 📝  
+---
 
+## 🔗 GitHub Repository  
+Find the complete project and source code here:  
+[GitHub Repository](https://github.com/omegaabot/hh8-minor-project-1)
 
 ---
 
-## 📂 Sample Output  
+## ✨ Sample Output  
 
 ### Screenshot of the Web UI:
-![Screenshot](demo-image-url) <!-- Replace with actual image URL -->
-
-```plaintext
-========= EMAIL ANALYZER TOOL =========
-
---- SPF/DKIM Validation ---
-SPF Result: pass (verified sender)
-DKIM Result: pass (valid signature)
-
---- Email Origin ---
-Received-From IP: 8.8.8.8
-GeoIP: Mountain View, California, United States
-
---- IP Reputation ---
-Abuse Confidence Score: 0
-Total Reports: None
-
-========= ANALYSIS COMPLETE =========
-```
+![Result Screenshot](sample_output/result.png)
 
 ---
 
@@ -78,14 +63,18 @@ Total Reports: None
    pip install -r requirements.txt
    ```
 
-4. Run the Flask app:
+4. Add your AbuseIPDB API key in `config.py`:
+   - Open `config.py` and replace `your-api-key-here` with your actual AbuseIPDB API key:
+     ```python
+     ABUSEIPDB_API_KEY = "your-api-key-here"
+     ```
+
+5. Run the Flask app:
    ```bash
    python email_analyzer_web.py
    ```
 
-5. Open the URL [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
-
-> Sample Header file: `sample.eml`  
+6. Open the URL [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
 ---
 
