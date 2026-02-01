@@ -1,0 +1,29 @@
+Return-Path: <example-sender@example.com>
+Delivered-To: recipient@gmail.com
+Received: from mail.example.com (mail.example.com. [8.8.8.8])
+    by mx.google.com with ESMTP id x12s11234567qke.123.2025.01.10
+    for <recipient@gmail.com>;
+    Fri, 10 Jan 2025 10:30:00 +0000 (UTC)
+Received-SPF: pass (google.com: domain of example.com designates 8.8.8.8 as permitted sender) client-ip=8.8.8.8;
+Authentication-Results: mx.google.com;
+    spf=pass (google.com: domain of example.com designates 8.8.8.8 as permitted sender) smtp.mailfrom=example-sender@example.com;
+    dkim=pass header.i=@example.com;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com; s=google;
+    h=from:to:subject:date:message-id:mime-version:content-type;
+    bh=abcd12345xyz/abcdefg12345abcd1234;
+    b=MiabCDEFGHIJKlmNOPQRstUVWXyzabcd12345AbCdEf123xyz=
+
+From: Example Sender <example-sender@example.com>
+To: recipient@gmail.com
+Subject: Test Email
+Date: Fri, 10 Jan 2025 10:30:00 +0000 (UTC)
+Message-ID: <abcd1234@google.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+
+Hello,
+
+This is a sample email for testing email headers using the Email Analyzer Tool. The email contains common headers and a simple message.
+
+Best regards,
+Example Sender
