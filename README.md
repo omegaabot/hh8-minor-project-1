@@ -33,11 +33,6 @@ Key Features:
 
 ---
 
-## 🔗 GitHub Repository  
-Find the complete project and source code here:  
-[GitHub Repository](https://github.com/omegaabot/hh8-minor-project-1)
-
----
 
 ## ✨ Sample Output  
 
