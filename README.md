@@ -1,143 +1,124 @@
-# 📧 EMAIL HEADER ANALYZER 📧  
-### Your Mail Forensics Sidekick!  
+# 📧 EMAIL ANALYZER TOOL 📧  
+### Uncover the Secrets Behind Email Headers!  
 
 ---
 
 ## 🚀 Introduction  
-Ever wondered where that cryptic email in your inbox came from? 🕵️‍♀️ Fear not! The **Email Header Analyzer** is your personal Sherlock Holmes for email headers. Whether you're tracing the true origins of an email or validating its authenticity, this tool has got your back! Dive deep into those headers and uncover hidden details like IP addresses, SPF/DKIM results, and more. ✨  
+Ever wondered about the authenticity of emails in your inbox? 🕵️‍♀️ Worry no more! The **Email Analyzer Tool** simplifies the process of analyzing email files (`.eml`) and provides detailed insights. From validating SPF/DKIM to tracing email origins and geolocating IP addresses, this tool is your ultimate mail forensics sidekick! Analyze emails, detect suspicious IPs, and visualize sender locations effortlessly. ✨  
 
 ---
 
 ## 🎯 Features & Tools Used  
 Built lovingly using:  
 - **Python** 🐍  
-- **Mail-parser Libraries** 📤  
+- **Flask Web Framework** 🌐  
+- **Folium for Maps** 🌏  
+- **Bootstrap for UI** ✨  
 
 Key Features:  
-- Analyze and parse email headers with ease.  
-- Extract **Received-From IP addresses** like a pro.  
-- Perform **GeoIP lookups** to pinpoint sender locations 🌏.  
-- Validate critical security checks with **SPF/DKIM pass/fail statuses**.  
-- Generate detailed forensic-grade reports 🕵️.  
+- **SPF/DKIM Validation**: Verify the sender’s identity and ensure security.  
+- **Email Origin Tracing**: Decode mysterious `Received` headers.  
+- **IP Reputation Check**: Spot suspicious IP addresses using AbuseIPDB.  
+- **Geolocation Mapping**: Track sender location on an interactive map.  
+- **Modern Web Interface**: Sleek UI for seamless analysis.  
 
 ---
 
 ## 🔍 How It Works  
 ### 🖋️ Step-by-Step Magic:
-1. Read raw email header text from `.txt` files.  
-2. Extract juicy details like **Received-From IP addresses** via mail-parsing powers.  
-3. Perform **GeoIP lookups** for sender locations.  
-   - Is the sender sipping coffee in Ashburn? Or somewhere suspicious? 🤔  
-4. Validate the sender authenticity using **SPF and DKIM results**:  
-   - **SPF** helps verify the allowed senders for domains!  
-   - **DKIM** ensures secure signatures are in place.  
+1. Upload `.eml` email files via the Web UI.  
+2. Extract juicy details like `Received` IP addresses via the tool.  
+3. Perform GeoIP lookups – does the sender look legitimate? 🤔  
+4. Validate SPF and DKIM statuses to ensure authenticity and security.  
 
-Results are all displayed neatly, like a well-organized detective’s notebook. 📝  
+Results are displayed in a user-friendly web interface, complete with maps, reputation data, and analysis logs. 📝  
 
 ---
 
 ## 📂 Sample Output  
-```
-========= EMAIL HEADER ANALYZER =========
 
---- Parsed Email Headers ---
-Received: from mail.example.com (mail.example.com. [8.8.8.8])
-  by mx.google.com with ESMTP id x12s11234567qke.123.2025.01.10
-    for <user@gmail.com>;
-  Fri, 10 Jan 2025 10:10:10 +0530 (IST)
-Authentication-Results: mx.google.com;
-  spf=pass;
-  dkim=pass;
-DKIM-Signature: v=1; a=rsa-sha256; d=example.com;
-From: Example Sender <test@example.com>
-To: user@gmail.com
-Subject: Test Email
-Date: Fri, 10 Jan 2025 10:10:10 +0530
+### Screenshot of the Web UI:
+![Screenshot](demo-image-url) <!-- Replace with actual image URL -->
 
---- Extracted IP Addresses ---
+```plaintext
+========= EMAIL ANALYZER TOOL =========
 
-8.8.8.8
+--- SPF/DKIM Validation ---
+SPF Result: pass (verified sender)
+DKIM Result: pass (valid signature)
 
---- GeoIP Analysis ---
+--- Email Origin ---
+Received-From IP: 8.8.8.8
+GeoIP: Mountain View, California, United States
 
-IP Address : 8.8.8.8
-Country    : United States
-City       : Ashburn
-ISP        : Google LLC
-
----------------------------------------
-
---- SPF / DKIM Status ---
-
-SPF Status: pass (google.com: domain of example.com designates 8.8.8.8 as permitted sender)
-DKIM Status: v=1; a=rsa-sha256; d=example.com;
-Auth Result: mx.google.com;
-  spf=pass;
-  dkim=pass;
+--- IP Reputation ---
+Abuse Confidence Score: 0
+Total Reports: None
 
 ========= ANALYSIS COMPLETE =========
 ```
 
 ---
 
-## 💻 Usage Instructions  
-### 🏃 Run the Analyzer:
+## 💻 Installation Instructions  
+### 🏃 Getting Started:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/omegaabot/hh8-minor-project-1.git
+   git clone https://github.com/username/repo-name.git
    ```
+
 2. Navigate to the project folder:
    ```bash
-   cd hh8-minor-project-1
+   cd repo-name
    ```
-3. Install the dependencies:
+
+3. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-4. Execute the script and uncover the truth:
-   ```bash
-   python main.py
-   ```  
 
-> Sample Header file: `sample_header.txt` 💡  
+4. Run the Flask app:
+   ```bash
+   python email_analyzer_web.py
+   ```
+
+5. Open the URL [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+
+> Sample Header file: `sample.eml`  
 
 ---
 
 ## 🤓 Tips & Tricks  
-- 🧐 **Suspicious IPs?** IP showing up in an unexpected country? Double-check the authenticity of the sender via SPF/DKIM checks!  
-- 🔍 **Investigations Made Easy:** Results marked as "pass" are trustworthy. "Fail" suggests caution.  
-- 📤 **Unknown Sender?:** Dive into domain and ISP details via GeoIP analysis.  
-
-> Fun Tip: Share findings with your friends and let them marvel at your detective skills. 🤩  
+- **Suspicious IPs?** Use IP reputation checks to detect malicious senders.  
+- **Debug Email Origin:** Trace all `Received` hops to pinpoint the true sender.  
+- **Geolocation Insights:** Spot anomalies in sender locations for added confidence.  
 
 ---
 
-## 🌟 Real-Life Use Cases  
-### 🏆 Practical Scenarios Where This Tool Shines:
+## 🌟 Use Cases  
+### Practical Scenarios to Use This Tool:
 - **Cybersecurity Enthusiasts**:  
-  Trace phishing attempts, identify spoofed emails, and improve your email security awareness. 🌐  
+  Analyze phishing attempts and spoofed emails to prevent attacks.  
 - **IT Professionals**:  
-  Fight spam emails in your company's inbox and ensure mail authenticity while delivering secure communications. 💼  
-- **Journalists & Advocates**:  
-  Validate sources and origins for critical whistleblower emails sent anonymously. 📰  
+  Identify spam emails and troubleshoot company email security settings.  
+- **Investigative Journalists**:  
+  Verify the authenticity and origin of anonymous sources.  
 - **Everyday Users**:  
-  Get peace of mind by verifying unknown senders in your inbox. 📩  
+  Validate unknown senders and keep inboxes secure.  
 
 ---
 
-## 🔮 Future Improvements & Roadmap  
-Explore the exciting plans for evolving the tool:  
-- Add **multi-output support** (e.g., export results in `.txt`, `.json`, or `.csv` formats).  
-- **Advanced SPF/DKIM Validation**: Dive deeper into SPF aligned domains, DMARC usage, and email replay protection.  
-- **AI-Powered IP Analysis**: Integrate machine-learning models to detect suspicious IP addresses faster.  
-- **Enhanced Visualizations**: Create graphs and charts for GeoIP data (like country heat maps).  
-- **Localization Support**: Expand IP location lookups to include multiple languages and regional APIs.  
+## 🔮 Future Roadmap  
+What’s next for this amazing tool?  
+- 🖋️ Add support for exporting results to `.json`, `.csv`, and `.pdf`.  
+- 🧠 Integrate AI models for smarter detection of phishing attempts.  
+- 📊 Develop enhanced visualizations like heatmaps for sender locations.  
+- 🌎 Expand localization for worldwide IP origin tracking.  
+- 🔒 Ensure additional SPF/DKIM validation insights like DMARC alignment.  
 
 ---
 
 ## 🎉 Conclusion  
-The **Email Header Analyzer** is your trusty gadget for all things mail-forensics. Whether you're a curious user or a cybersecurity enthusiast, this tool empowers you to uncover mysteries hiding in email headers like a seasoned pro. 🚀  
+The **Email Analyzer Tool** is your reliable gadget for uncovering hidden details in email headers. Whether you’re a cybersecurity enthusiast, an IT pro, or just a curious user, this tool empowers you to be the detective you were meant to be! 🚀  
 
-So grab your magnifying glass 🧐, fire up the analyzer, and let those email secrets spill the beans!  
-
-Happy analyzing! 🌟
+So fire up the analyzer and start decoding those mysterious emails! 🌟  
