@@ -35,6 +35,12 @@ Results are displayed in a user-friendly web interface, complete with maps, repu
 
 ---
 
+## 🔗 GitHub Repository  
+Find the complete project and source code here:  
+[GitHub Repository](https://github.com/omegaabot/hh8-minor-project-1)
+
+---
+
 ## 📂 Sample Output  
 
 ### Screenshot of the Web UI:
@@ -64,12 +70,12 @@ Total Reports: None
 ### 🏃 Getting Started:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/repo-name.git
+   git clone https://github.com/omegaabot/hh8-minor-project-1.git
    ```
 
 2. Navigate to the project folder:
    ```bash
-   cd repo-name
+   cd hh8-minor-project-1
    ```
 
 3. Install dependencies:
