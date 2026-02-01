@@ -1,4 +1,5 @@
-Flask==2.3.2
-mail-parser==3.18.0
-folium==0.14.0
-requests==2.31.0
+Flask
+Gunicorn
+Folium
+Requests
+mail-parser
